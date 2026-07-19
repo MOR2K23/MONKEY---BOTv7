@@ -5,7 +5,7 @@ iniciarMemoria,
 guardarRecuerdo,
 obtenerRecuerdos
 } = require("./memoria");
-const phoneNumber = "51932751676"
+const phoneNumber = "51955482486"
 const OWNER = '51920645722@s.whatsapp.net'
 const {
     makeWASocket,
