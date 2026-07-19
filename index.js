@@ -5,7 +5,7 @@ iniciarMemoria,
 guardarRecuerdo,
 obtenerRecuerdos
 } = require("./memoria");
-const phoneNumber = "51955482486"
+const phoneNumber = "51932751676"
 const OWNER = '51920645722@s.whatsapp.net'
 const {
     makeWASocket,
@@ -1800,13 +1800,16 @@ if (texto.startsWith('.play ')) {
                     return
                 }
 
-                await sock.sendMessage(
-                    msg.key.remoteJid,
-                    {
-                        audio: fs.readFileSync('./audio.mp3'),
-                        mimetype: 'audio/mpeg'
-                    }
-                )
+console.log(fs.existsSync('./audio.mp3'))
+console.log(fs.statSync('./audio.mp3'))
+
+await sock.sendMessage(
+    msg.key.remoteJid,
+    {
+        audio: { url: './audio.mp3' },
+        mimetype: 'audio/mpeg'
+    }
+)
 
                 fs.unlinkSync('./audio.mp3')
 
